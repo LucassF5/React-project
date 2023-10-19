@@ -14,7 +14,7 @@
 //   )
 // }
 
-const Hello = (props) => {
+const Hello = (props) => { // props = propriedades
   console.log(props)
   return(
     <div>
