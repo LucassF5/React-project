@@ -12,7 +12,8 @@ const App = () => {
   const age = "10"
   return(
     // <div>
-    <>  // Um exemplo de como empacotar vários elementos sem precisar de uma div
+    <>  
+    {/* Um exemplo de como empacotar vários elementos sem precisar de uma div */}
       <style>
         {`
           body {
