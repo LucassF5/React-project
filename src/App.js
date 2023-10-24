@@ -1,32 +1,33 @@
 import {useState} from 'react'
 
 const App = () => {
-  const [cliques, setCliques] = useState({ 
-    esquerda: 0, direita: 0
-  })
+  const [esquerda, setEsquerda] = useState(0)
+  const [direita, setDireita] = useState(0)
+
+  const [todosOsCliques, setTodos] = useState([])
+
 
   const handleCliqueEsquerda = () => {
-    const novosCliques = { 
-      esquerda: cliques.esquerda + 1, 
-      direita: cliques.direita 
-    }
-    setCliques(novosCliques)
-  }
+    setTodos(todosOsCliques.concat('E')) //Vai adicionar o valor E no array quando for clicado 
+    setEsquerda(esquerda + 1)
+  } 
+
 
   const handleCliqueDireita = () => {
-    const novosCliques = { 
-      esquerda: cliques.esquerda, 
-      direita: cliques.direita + 1 
-    }
-    setCliques(novosCliques)
+    setTodos(todosOsCliques.concat('D')) //Vai adicionar o valor D no array quando for clicado
+    setDireita(direita + 1)
   }
 
   return (
     <div>
-      {cliques.esquerda}
+      {esquerda}
       <button onClick={handleCliqueEsquerda}>Esquerda</button>
       <button onClick={handleCliqueDireita}>Direita</button>
-      {cliques.direita}
+      {direita}
+
+      <p>{todosOsCliques.join(' ')}</p> 
+      {/* Vai juntar os valores do array e colocar um espaço entre eles
+      Vai mostrar todos os cliques que foram feitos/mostrar os valores do array */}
     </div>
   )
 }
