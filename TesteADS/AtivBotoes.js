@@ -1,23 +1,23 @@
 import { useState } from 'react'
 
-  const ButtonAcrescentar = () => {
+  // const ButtonAcrescentar = () => {
 
-    const [ contador, setContador ] = useState(0)
+  //   const [ contador, setContador ] = useState(0)
 
-    return(
-      <div>
-        <h1>{contador}</h1>
-        <button onClick={() => setContador(contador + 1)}>
-          ACRESCENTAR
-        </button>
-        <button onClick={() => setContador(0)}> 
-          zerar
-        </button>
-      </div>
+  //   return(
+  //     <div>
+  //       <h1>{contador}</h1>
+  //       <button onClick={() => setContador(contador + 1)}>
+  //         ACRESCENTAR
+  //       </button>
+  //       <button onClick={() => setContador(0)}> 
+  //         zerar
+  //       </button>
+  //     </div>
 
       
-    )
-  }
+  //   )
+  // }
 
 //   function CounterFactorial() {
 //   const [count, setCount] = useState(0);
@@ -36,6 +36,26 @@ import { useState } from 'react'
 //   );
 // }
 
+const FibonacciButton = () => {
+  const [ contador3, setContador3 ] = useState(0)
+
+  function fibonacci(conta2) {
+    if (conta2 <= 1) return conta2;
+    return fibonacci(conta2-1) + fibonacci(conta2-2);
+  }
+
+  return(
+    <div>
+      <h1>Fibonacci: {fibonacci(contador3)}</h1>
+      <button onClick={() => setContador3(contador3+1)}>
+        ACRESCENTAR Fibonacci
+      </button>
+      <p>Valor contador: {contador3}</p>
+    </div>
+  )
+
+  
+}
   const FactorialButton = () => {
 
     const [ contador2, setContador2 ] = useState(0)
@@ -105,7 +125,7 @@ const App = () => {
 
   return (
     <div>
-      <ButtonAcrescentar />
+      <FibonacciButton />
       <FactorialButton />
       {/* <Exibir contador={contador} />
       <Botao onClick={aumentarEmUm} texto="mais+" />
@@ -115,8 +135,8 @@ const App = () => {
   )
 } 
 
-const Exibir = ({ contador }) => <div><h1>{contador}</h1></div>
+// const Exibir = ({ contador }) => <div><h1>{contador}</h1></div>
 
-const Botao = ({ onClick, texto }) => <button onClick={onClick}>{texto}</button>
+// const Botao = ({ onClick, texto }) => <button onClick={onClick}>{texto}</button>
 
 export default App
