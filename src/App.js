@@ -1,10 +1,15 @@
-import {useState} from 'react'
+import {useState, useEffect} from 'react'
 
 const App = () => {
   const [esquerda, setEsquerda] = useState(0)
   const [direita, setDireita] = useState(0)
 
   const [todosOsCliques, setTodos] = useState([])
+
+  // useEffect(() => {
+  //   alert('Qualquer coisa') //Vai aparecer no console do navegador
+  // }, [esquerda, direita]) //usar [] está indicando que vai aparecer na mudança de estado do que está dentro do array
+  // //Vai aparecer quando o valor de esquerda ou direita mudar
 
 
   const handleCliqueEsquerda = () => {
