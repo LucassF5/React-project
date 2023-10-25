@@ -6,6 +6,8 @@ const App = () => {
 
   const [todosOsCliques, setTodos] = useState([])
 
+  const [total, setTotal] = useState(0)
+
   // useEffect(() => {
   //   alert('Qualquer coisa') //Vai aparecer no console do navegador
   // }, [esquerda, direita]) //usar [] está indicando que vai aparecer na mudança de estado do que está dentro do array
@@ -14,13 +16,17 @@ const App = () => {
 
   const handleCliqueEsquerda = () => {
     setTodos(todosOsCliques.concat('E')) //Vai adicionar o valor E no array quando for clicado 
-    setEsquerda(esquerda + 1)
+    const atualizaEsquerda = esquerda + 1
+    setEsquerda(atualizaEsquerda)
+    setTotal(atualizaEsquerda + direita)
   } 
 
 
   const handleCliqueDireita = () => {
     setTodos(todosOsCliques.concat('D')) //Vai adicionar o valor D no array quando for clicado
-    setDireita(direita + 1)
+    const atualizaDireita = direita + 1
+    setDireita(atualizaDireita)
+    setTotal(atualizaDireita + esquerda)
   }
 
   return (
@@ -31,6 +37,8 @@ const App = () => {
       {direita}
 
       <p>{todosOsCliques.join(' ')}</p> 
+
+      <p>Total {total}</p>
       {/* Vai juntar os valores do array e colocar um espaço entre eles
       Vai mostrar todos os cliques que foram feitos/mostrar os valores do array */}
     </div>
