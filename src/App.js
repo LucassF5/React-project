@@ -49,11 +49,19 @@ const App = () => {
     setDireita(direita + 1)
   }
 
+  const zeraClick = () => {
+    console.log('Zerar')
+    setTodos(todosOsCliques.concat('Z'))
+    setEsquerda(0)
+    setDireita(0)
+  }
+
   return (
     <div>
       {esquerda}
       <Botao handleClique={handleCliqueEsquerda} texto='Esquerda' />
       <Botao handleClique={handleCliqueDireita} texto='Direita' />
+      <Botao handleClique={zeraClick} texto='Zerar' />
       {direita}
       <Historico todosOsCliques={todosOsCliques} />
     </div>
