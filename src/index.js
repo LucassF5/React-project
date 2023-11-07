@@ -8,12 +8,12 @@ const notes = [
 
   {
     id: 1,
-    content: 'HTML é fácil',
+    content: 'Code++',
     important: true
   },
   {
     id: 2,
-    content: 'O navegador só pode executar JavaScript',
+    content: 'Codar é bom demaizi',
     important: false
   },
   {
