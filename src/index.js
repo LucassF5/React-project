@@ -18,7 +18,7 @@ const notes = [
   },
   {
     id: 3,
-    content: 'GET e POST são os métodos mais importantes do protocolo HTTP',
+    content: 'Treinando com React',
     important: true
   }
 ]
