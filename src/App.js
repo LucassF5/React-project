@@ -1,11 +1,28 @@
 import "./App.css";
-import {useState} from "react"
 import Note from "./components/Note"
+import { useState, useEffect } from 'react'
+import axios from 'axios'
 
 const App = (props) => {
-  const [notes, setNotes] = useState(props.notes) 
+  const [notes, setNotes] = useState([]) 
   const [newNote, setNewNote] = useState('')
   const [showAll, setShowAll] = useState(true)
+
+  const hook = () => {
+    // Hook vai ser a constante que ativa o efeito
+    console.log('effect (efeito)') // imprime quando o componente é renderizado
+    axios.get('http://localhost:3001/notes').then((response) => {
+    // Tendo sucesso, a função de retorno de chamada 
+    //é chamada com a resposta do servidor como seu argumento.
+      console.log('promise fulfilled (promessa resolvida)')
+      setNotes(response.data)
+      // A função setNotes atualiza o estado de notes com a resposta do servidor
+    })
+  }
+  
+  useEffect(hook, [])
+
+  console.log('render (renderiza)', notes.length, 'notes (notas)')
 
   const addNote = (event) => {
     event.preventDefault()
